@@ -272,28 +272,33 @@
     </div>
   </main>
 
-  <script>
-    document.getElementById('downloadVcf')?.addEventListener('click', () => {
-      const vcard = [
-        'BEGIN:VCARD',
-        'VERSION:3.0',
-        'N:Smith;Matt;;;',
-        'FN:Matt Smith',
-        'ORG:Noventech',
-        'TITLE:Helpdesk Analyst',
-        'TEL;TYPE=CELL,VOICE:+1-630-590-0627',
-        'EMAIL;TYPE=INTERNET,PREF:matt@noventech.com',
-        'URL:https://noventech.com',
-        'ADR;TYPE=WORK:;;450 East 22nd Street;Lombard;IL;60148;United States',
-        'END:VCARD'
-      ].join('\\n');
-      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url; a.download = 'Matt-Smith.vcf';
-      document.body.appendChild(a); a.click(); a.remove();
-      URL.revokeObjectURL(url);
-    });
-  </script>
-</body>
+ <script>
+document.getElementById('downloadVcf')?.addEventListener('click', () => {
+  const vcard = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'N:Smith;Matt;;;',
+    'FN:Matt Smith',
+    'ORG:Noventech',
+    'TITLE:Helpdesk Analyst',
+    'TEL;TYPE=CELL,VOICE:+1-630-590-0627',
+    'EMAIL;TYPE=INTERNET,PREF:matt@noventech.com',
+    'URL:https://noventech.com',
+    'ADR;TYPE=WORK:;;450 East 22nd Street;Lombard;IL;60148;United States',
+    'END:VCARD'
+  ].join('\n');
+
+  // Encode and trigger download via data URI
+  const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'Matt-Smith.vcf';
+  a.click();
+
+  URL.revokeObjectURL(url);
+});
+</script>
+
 </html>
