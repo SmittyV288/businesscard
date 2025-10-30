@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbb23e">
+  <title>Matt Smith</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Matt Smith_files/css2" rel="stylesheet">
+
+  <style>
+    :root{
+      --top:#fbb23e;
+      --bot:#f8931f;
+      --ink:#000;
+      --muted:#767C83;
+      --rowLine:#F2F2F2;
+      --chipRing:#E7E9EC;
+      --map:#EBF8F6;
+      --cta:#f8931f;
+      --wrap:700px;
+      --radius:4px;
+      --shadow:1px 6px 30px rgba(0,31,14,.05);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:#fff;
+      color:var(--ink);
+      font-family:"Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    /* Header curve */
+    .hero{
+      position:relative;
+      width:100%;
+      height:360px;
+      overflow:hidden;
+      z-index:0;
+    }
+    .hero svg{
+      position:absolute;inset:0;width:100%;height:100%;
+    }
+
+    .wrap{
+      width:min(var(--wrap),100%);
+      margin:0 auto;
+      padding:0 16px 28px;
+      position:relative;
+      z-index:1;
+    }
+
+    /* Avatar with orange background container */
+    .avatar-wrap{
+      display:flex;
+      justify-content:center;
+      position:relative;
+      margin-top:-120px;
+    }
+    .avatar-bg {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50%;
+  background:transparent; /* no orange fill */
+  padding:0;
+  position:relative;
+}
+
+/* white circular border around the photo */
+.avatar {
+  width:132px;
+  height:132px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  border:7px solid #fff; /* this creates the white circular ring */
+  box-shadow:0 18px 44px rgba(0,0,0,.05), 0 2px 6px rgba(0,0,0,.04);
+  background:transparent;
+}
+
+/* optional subtle orange glow behind */
+.avatar-bg::before {
+  content:"";
+  position:absolute;
+  top:-10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  background:linear-gradient(180deg,#fbb23e,#f8931f);
+  filter:blur(18px);
+  opacity:0.35;
+  z-index:-1;
+}
+
+
+    h1{
+      margin:20px 0 6px;
+      text-align:center;
+      font-family:Montserrat, system-ui, -apple-system;
+      font-weight:700;font-size:30px;
+    }
+    h2{
+      margin:0 0 8px;
+      text-align:center;
+      font-family:Montserrat, system-ui, -apple-system;
+      font-weight:600;font-size:16px;
+    }
+
+    /* Chips */
+    .chips{
+      display:flex;justify-content:center;gap:22px;margin-top:16px;
+    }
+    .chip{
+      width:62px;height:62px;border-radius:999px;
+      background:#fff;display:grid;place-items:center;
+      box-shadow:1px 6px 30px rgba(0,31,14,.05),0 0 0 1px rgba(0,0,0,.04) inset;
+      cursor:pointer;transition:.15s transform,.15s opacity;
+    }
+    .chip:hover{transform:scale(1.05);opacity:.95;}
+    .chip svg{
+      width:22px;height:22px;stroke:#000;stroke-width:1.75;fill:none;
+      vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round;
+    }
+
+    /* Card */
+    .card{
+      margin:22px auto 0;
+      background:#fff;border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      width:100%;
+      padding:0;
+    }
+    .row{
+      display:flex;align-items:center;gap:14px;
+      padding:18px 22px;min-height:64px;
+    }
+    .row + .row{border-top:1px solid var(--rowLine);}
+    .dot{
+      width:40px;height:40px;border-radius:999px;
+      display:grid;place-items:center;
+      background:#F9F9F9;flex:0 0 40px;
+    }
+    .dot svg{
+      width:18px;height:18px;stroke:#000;stroke-width:1.75;
+      fill:none;stroke-linecap:round;stroke-linejoin:round;
+    }
+    .meta{display:flex;flex-direction:column;}
+    .label{font-size:10px;color:var(--muted);margin:0 0 2px;}
+    .value{font-size:16px;font-weight:600;margin:0;word-break:break-word;}
+    .map-pill{
+      display:inline-block;margin-top:8px;
+      font-size:10px;padding:6px 14px;border-radius:22px;
+      background:var(--map);color:#000;text-decoration:none;
+    }
+
+    /* CTA */
+    .cta-wrap{display:flex;justify-content:center;}
+    .cta{
+      width:100%;margin:18px 0 0;padding:14px 18px;
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      border:0;border-radius:var(--radius);
+      background:var(--cta);color:#000;font-weight:700;font-size:18px;
+      cursor:pointer;transition:.15s opacity;
+    }
+    .cta:hover{opacity:.92;}
+    .cta svg{width:20px;height:20px;stroke:#000;stroke-width:1.75;fill:none;}
+
+    a{color:inherit;text-decoration:none}
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="hero" role="banner" aria-label="Header">
+    <svg viewBox="0 0 2080 379" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <lineargradient id="g1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="var(--top)"></stop>
+          <stop offset="1" stop-color="var(--bot)"></stop>
+        </lineargradient>
+      </defs>
+      <path d="M0 0H2080V354.388C2080 354.388 1754 300.776 1040 354.388C326 408 0 354.388 0 354.388V0Z" fill="url(#g1)"></path>
+    </svg>
+  </header>
+
+  <main class="wrap">
+    <!-- AVATAR WITH ORANGE BACKGROUND -->
+    <div class="avatar-wrap">
+      <div class="avatar-bg">
+        <img class="avatar" src="./Matt Smith_files/dSUc1W_5e0455781cf5dac1.png" alt="Matt Smith">
+      </div>
+    </div>
+
+    <!-- NAME & TITLE -->
+    <h1>Matt Smith</h1>
+    <h2>Helpdesk Analyst</h2>
+
+    <!-- ACTION BUTTONS -->
+    <nav class="chips" aria-label="Quick actions">
+      <a class="chip" href="tel:16305900627" aria-label="Call">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v2a2 2 0 0 1-2.18 2
+          19.79 19.79 0 0 1-8.63-3.07
+          19.5 19.5 0 0 1-6-6
+          19.79 19.79 0 0 1-2.09-6.74
+          2 2 0 0 1 2.09-2.11h2
+          a2 2 0 0 1 2 1.72c.12.9.31 1.78.57 2.63
+          a2 2 0 0 1-.45 2.11l-1 1
+          a16 16 0 0 0 6 6l1-1
+          a2 2 0 0 1 2.11-.45
+          c.85.26 1.73.45 2.63.57
+          a2 2 0 0 1 1.72 2z"></path></svg>
+      </a>
+      <a class="chip" href="mailto:matt@noventech.com" aria-label="Email">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><polyline points="22,6 12,13 2,6"></polyline></svg>
+      </a>
+      <a class="chip" href="https://maps.google.com/?q=450+East+22nd+Street,+Lombard,+IL,+60148,+United+States" target="_blank" rel="noopener" aria-label="Open map">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.33-7-10a7 7 0 0 1 14 0c0 4.67-7 10-7 10z"></path><circle cx="12" cy="11" r="3"></circle></svg>
+      </a>
+    </nav>
+
+    <!-- DETAILS CARD -->
+    <section class="card" aria-label="Details">
+      <div class="row">
+        <span class="dot"><svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4
+        c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16
+        c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"></path></svg></span>
+        <div class="meta">
+          <p class="label">Direct Line</p>
+          <p class="value"><a href="tel:16305900627">630-590-0627</a></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="dot"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+        <div class="meta">
+          <p class="label">Email</p>
+          <p class="value"><a href="mailto:matt@noventech.com">matt@noventech.com</a></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2c2.5 3 2.5 17 0 20M4 7h16M4 17h16"></path></svg></span>
+        <div class="meta">
+          <p class="label">Website</p>
+          <p class="value"><a href="https://noventech.com/" target="_blank" rel="noopener">noventech.com</a></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="dot"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.33-7-10a7 7 0 0 1 14 0c0 4.67-7 10-7 10z"></path><circle cx="12" cy="11" r="3"></circle></svg></span>
+        <div class="meta">
+          <p class="label">Location</p>
+          <p class="value">450 East 22nd Street, Lombard, IL, 60148, United States</p>
+          <a class="map-pill" href="https://maps.google.com/?q=450+East+22nd+Street,+Lombard,+IL,+60148,+United+States" target="_blank" rel="noopener">Show on Map</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-wrap">
+      <button class="cta" id="downloadVcf" aria-label="Add Contact">
+        <svg viewBox="0 0 20 20"><path d="M3.333 12.08h13.2v6.145h-13.2z"></path><circle cx="9.95" cy="6.09" r="3.93"></circle></svg>
+        Add Contact
+      </button>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('downloadVcf')?.addEventListener('click', () => {
+      const vcard = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'N:Smith;Matt;;;',
+        'FN:Matt Smith',
+        'ORG:Noventech',
+        'TITLE:Helpdesk Analyst',
+        'TEL;TYPE=CELL,VOICE:+1-630-590-0627',
+        'EMAIL;TYPE=INTERNET,PREF:matt@noventech.com',
+        'URL:https://noventech.com',
+        'ADR;TYPE=WORK:;;450 East 22nd Street;Lombard;IL;60148;United States',
+        'END:VCARD'
+      ].join('\\n');
+      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'Matt-Smith.vcf';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+
+
+</body></html>
